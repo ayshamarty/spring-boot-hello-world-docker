@@ -20,7 +20,7 @@ pipeline{
                 }
 		stage('--deploy--'){
 			steps{
-				sh "scp cat /var/lib/jenkins/workspace/HelloWorldJob/target/hello-world-0.0.1-SNAPSHOT.jar jenkins@52.236.161.240"
+				sh "scp cat /var/lib/jenkins/workspace/${JOB_NAME}/target/hello-world-0.0.1-SNAPSHOT.jar jenkins@52.236.161.240: ~"
 			}
 		}
         }
