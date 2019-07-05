@@ -4,24 +4,17 @@ pipeline{
                         steps{
                                 sh "pwd"
                                 sh "ls"
-                                sh "mvn clean -f /var/lib/jenkins/jobs/${JOB_NAME}/Java"
+                                sh "mvn clean -f /var/lib/jenkins/jobs/${JOB_NAME}"
                         }
                 }
                 stage('--package--'){
                         steps{
-                                sh "mvn package -f /var/lib/jenkins/jobs/${JOB_NAME}/Java"
+                                sh "mvn package -f /var/lib/jenkins/jobs/${JOB_NAME}"
                         }
                 }
                 stage('--test--'){
                         steps{
-                                sh "mvn test -f /var/lib/jenkins/jobs/${JOB_NAME}/Java"
-                        }
-                }
-                stage('--deploy--'){
-                        steps{
-                                sh "cd /"
-                                sh "pwd"
-                                sh "sudo cp /var/lib/jenkins/jobs/${JOB_NAME}/Java/target/Yoga.war /$
+                                sh "mvn test -f /var/lib/jenkins/jobs/${JOB_NAME}"
                         }
                 }
         }
