@@ -1,5 +1,6 @@
 pipeline{
         agent any
+	stages{
                  stage('---clean---'){
                         steps{
                                 sh "pwd"
@@ -15,7 +16,7 @@ pipeline{
                 stage('--test--'){
                         steps{
                                 sh "mvn test -f /var/lib/jenkins/jobs/${JOB_NAME}"
-                        }
+                      	}
                 }
         }
 }
